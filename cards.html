@@ -1,12 +1,42 @@
 <div ng-show="tab.isSet(1)" class="cardsdiv">
-  
-  
-  <div class="filterdiv">
-      <input ng-model="cards.filtersettings.search.name_norm" type="text" placeholder="Search by card name" style="width:28%;font-size:12px;margin-right:10px;">
+	<div class="filters">
+		<div class="filter">
+      <input ng-model="cards.filtersettings.search.name_norm" type="text" placeholder="Search by title or text">
+		</div>
+		<div class="filter">
       <traits></traits>
+		</div>
+		<div class="filter filter--button">
+      <button type="button" class="button button--red" ng-click="cards.resetSearch();">Reset</button>
+		</div>
+	</div>
+
+	<div class="filters filters--spread">
+		<div class="filter">
+      <button title="Heroes" class="filter-button" ng-class="{selected: cards.filtersettings.type['1hero']}" ng-click="cards.toggleType('1hero',$event)"><img src="img/types/1hero.png"/></button>
+      <button title="Allies" class="filter-button" ng-class="{selected: cards.filtersettings.type['2ally']}" ng-click="cards.toggleType('2ally',$event)"><img src="img/types/2ally.png"/></button>
+      <button title="Attachments" class="filter-button" ng-class="{selected: cards.filtersettings.type['3attachment']}" ng-click="cards.toggleType('3attachment',$event)"><img src="img/types/3attachment.png"/></button>
+      <button title="Events" class="filter-button" ng-class="{selected: cards.filtersettings.type['4event']}" ng-click="cards.toggleType('4event',$event)"><img src="img/types/4event.png"/></button>
+      <button title="Side Quests" class="filter-button" ng-class="{selected: cards.filtersettings.type['5quest']}" ng-click="cards.toggleType('5quest',$event)"><img src="img/types/5quest.png"/></button>
+		</div>
+		<div class="filter">
+      <button title="Leadership" class="filter-button" ng-class="{selected: cards.filtersettings.spheres['1leadership']}" ng-click="cards.toggleSphere('1leadership',$event)"><img src="img/spheres/leadership.png"/></button>
+      <button title="Tactics" class="filter-button" ng-class="{selected: cards.filtersettings.spheres['2tactics']}" ng-click="cards.toggleSphere('2tactics',$event)"><img src="img/spheres/tactics.png"/></button>
+      <button title="Spirit" class="filter-button" ng-class="{selected: cards.filtersettings.spheres['3spirit']}" ng-click="cards.toggleSphere('3spirit',$event)"><img src="img/spheres/spirit.png"/></button>
+      <button title="Lore" class="filter-button" ng-class="{selected: cards.filtersettings.spheres['4lore']}" ng-click="cards.toggleSphere('4lore',$event)"><img src="img/spheres/lore.png"/></button>
+      <button title="Neutral" class="filter-button" ng-class="{selected: cards.filtersettings.spheres['5neutral']}" ng-click="cards.toggleSphere('5neutral',$event)"><img src="img/spheres/neutral.png"/></button>
+      <button title="Baggins" class="filter-button" ng-class="{selected: cards.filtersettings.spheres['6baggins']}" ng-click="cards.toggleSphere('6baggins',$event)"><img src="img/spheres/baggins.png"/></button>
+      <button title="Fellowship" class="filter-button" ng-class="{selected: cards.filtersettings.spheres['7fellowship']}" ng-click="cards.toggleSphere('7fellowship',$event)"><img src="img/spheres/fellowship.png"/></button>
+		</div>
+	</div>
+
+
+
+  <div class="filterdiv">
+<!--       <input ng-model="cards.filtersettings.search.name_norm" type="text" placeholder="Search by card name" style="width:28%;font-size:12px;margin-right:10px;">
       <input ng-model="cards.filtersettings.search.textc" type="text" placeholder="Search by card text" style="width:28%;font-size:12px;margin-right:10px;">
       <button ng-click="cards.resetSearch();" class="packbutton" style="font-size:12px;width:10%;height:25px;">Reset</button>
-      <br/>
+      <br/> -->
     <div style="float:left;margin-right:5px;">
       <div style="font-size:9px;width:100%;text-align:center;">Card Type</div></br>
       <button title="Heroes" class="filterbutton" ng-class="{selected: cards.filtersettings.type['1hero']}" ng-click="cards.toggleType('1hero',$event)"><img src="img/types/1hero.png"/></button>

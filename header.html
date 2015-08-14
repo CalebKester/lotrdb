@@ -1,5 +1,14 @@
-<div class="headerdiv">
-<h1>
- The Rivendell Councilroom
-</h1>
+<div class="header-logo">
+	<img src="/img/logo-mark.png" alt="" />
+	The Rivendell Councilroom
 </div>
+<nav class="header-nav">
+	<ul class="navList">
+		<li>
+			<a href ng-click="tab.setTab(5)" ng-class="{activetab: tab.isSet(5)}">Help</a>
+		</li>
+		<li>
+			<a href ng-click="tab.setTab(6)" ng-class="{activetab: tab.isSet(6)}">Updates</a>
+		</li>
+	</ul>
+</nav>

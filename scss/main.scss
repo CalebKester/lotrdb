@@ -1,0 +1,196 @@
+
+// Colors
+
+$color-utility: #313843;
+
+// Includes
+
+@import "normalize";
+@import "boilerplate";
+
+// Fonts
+
+@font-face{ 
+	font-family: 'Vafthrudnir';
+	src: url('/fonts/vafthrud-webfont.eot');
+	src: url('/fonts/vafthrud-webfont.eot?#iefix') format('embedded-opentype'),
+	     url('/fonts/vafthrud-webfont.woff') format('woff'),
+	     url('/fonts/vafthrud-webfont.ttf') format('truetype'),
+	     url('/fonts/vafthrud-webfont.svg#webfont') format('svg');
+}
+
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background: $color-utility url(/img/inscription.svg) no-repeat 0 -75%;
+}
+
+.header-logo {
+	// padding: 0.9rem 1rem 0 1rem;
+	padding: 0.4rem 1rem 0;
+	font-family: Vafthrudnir, Arial, sans-serif;
+	color: #fff;
+	font-variant: small-caps;
+	font-size: 32px;
+	font-size: 2rem;
+
+	img {
+		vertical-align: middle;
+	}
+}
+
+.navList  {
+	display: block;
+	display: flex;
+	justify-content: space-around;
+	margin: 0;
+	padding: 0;
+
+	li {
+		flex: 1 1 auto;
+		display: inline-block;
+		margin: 0;
+		padding: 0;
+	}
+
+	a {
+		display: block;
+		color: #fff;
+		// padding: 1.3rem 2rem 1rem;
+		padding: 1.2rem 2rem 1rem;
+		font-size: 24px;
+		font-size: 1.5rem;
+		font-family: Vafthrudnir, Arial, sans-serif;
+		font-variant: small-caps;
+		text-align: center;
+		text-decoration: none;
+
+		&:hover, &:focus {
+			text-decoration: none;
+			background: hsla(0, 0%, 0%, 0.2);
+		}
+
+		&.is-active, &.activetab {
+			background: hsla(0, 0%, 0%, 0.3);
+		}
+	}
+}
+
+.navList--small {
+	a {
+		padding: 0.5rem 1rem 0rem;
+	}
+}
+
+.navList--alt {
+	background: #612229;
+}
+
+.main {
+	display: flex;
+}
+
+
+// Filters
+
+.filters {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 0.5rem;
+
+	.no-flexbox {
+		display: table-cell;
+		width: 100%;
+
+		.filter {
+			display: table;
+		}
+	}
+}
+
+.filter {
+	flex: 1 1 auto;
+
+	input {
+		padding: 0.25rem 0.5rem;
+		height: 40px;
+		width: 100%;
+		border: 1px solid black;
+		border-radius: 5px;
+		font-size: 1rem;
+	}
+
+	select {
+		padding: 0.25rem 0.5rem;
+		height: 40px;
+		width: 100%;
+		border: 1px solid black;
+		border-radius: 5px;
+		font-size: 1rem;
+		// appearance: none;
+	}
+
+	+ .filter {
+		margin-left: 0.5rem;
+	}
+}
+
+.filters--spread {
+	justify-content: space-between;
+
+	> div {
+		flex: 0 1 auto;
+	}
+}
+
+.filter--button {
+	flex: 0 0 auto;
+}
+
+.filter-button {
+	flex: 0 0 34px;
+	background: url(/img/encounter.png) 50% 50%;
+	background-size: 100% 100%;
+	padding: 0;
+	border: 0;
+	width: 34px;
+	height: 34px;
+	opacity: 0.24;
+	outline: 0;
+	transition: all 0.2s ease-out;
+
+	&.selected {
+		opacity: 1;
+	}
+}
+
+
+.button {
+	border: 0;
+	padding: 0.25rem 0.5rem;
+	height: 40px;
+	background: #9E9E9E;
+	color: #fff;
+	border-radius: 5px;
+	transition: all 0.3s ease-out;
+}
+
+@mixin button-variation($bg, $color: #fff) {
+	background: $bg;
+	color: $color;
+
+	&:hover, &:focus {
+		background: darken($bg, 10%);
+	}
+
+	&.is-active {
+		background: $bg;
+	}
+}
+
+
+.button--red {
+	@include button-variation(#F44336);
+}

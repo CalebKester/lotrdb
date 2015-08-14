@@ -4,3 +4,4 @@ beorn
 *.backup
 octgn/*
 octgn
+**/node_modules/
