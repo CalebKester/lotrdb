@@ -567,8 +567,8 @@ video {
 
 @font-face {
   font-family: 'Vafthrudnir';
-  src: url("/fonts/vafthrud-webfont.eot");
-  src: url("/fonts/vafthrud-webfont.eot?#iefix") format("embedded-opentype"), url("/fonts/vafthrud-webfont.woff") format("woff"), url("/fonts/vafthrud-webfont.ttf") format("truetype"), url("/fonts/vafthrud-webfont.svg#webfont") format("svg"); }
+  src: url("../fonts/vafthrud-webfont.eot");
+  src: url("../fonts/vafthrud-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/vafthrud-webfont.woff") format("woff"), url("../fonts/vafthrud-webfont.ttf") format("truetype"), url("../fonts/vafthrud-webfont.svg#webfont") format("svg"); }
 
 .header {
   display: -webkit-flex;
@@ -580,7 +580,7 @@ video {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  background: #313843 url(/img/inscription.svg) no-repeat 0 -75%; }
+  background: #313843 url(../img/inscription.svg) no-repeat 0 -75%; }
 
 .header-logo {
   padding: 0.4rem 1rem 0;
@@ -690,7 +690,7 @@ video {
   -webkit-flex: 0 0 34px;
       -ms-flex: 0 0 34px;
           flex: 0 0 34px;
-  background: url(/img/encounter.png) 50% 50%;
+  background: url(../img/encounter.png) 50% 50%;
   background-size: 100% 100%;
   padding: 0;
   border: 0;
@@ -760,7 +760,7 @@ cardpreview {
   display: inline-block;
   width: 14px;
   height: 14px;
-  background: url(/img/unique.png);
+  background: url(../img/unique.png);
   background-size: 100%; }
 
 .buttonGroup {
