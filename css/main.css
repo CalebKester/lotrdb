@@ -237,7 +237,8 @@ select {
  *    `input` and others.
  */
 button,
-html input[type="button"], input[type="reset"],
+html input[type="button"],
+input[type="reset"],
 input[type="submit"] {
   -webkit-appearance: button;
   /* 2 */
@@ -633,7 +634,8 @@ video {
 .main {
   display: -webkit-flex;
   display: -ms-flexbox;
-  display: flex; }
+  display: flex;
+  padding: 1rem; }
 
 .filters {
   display: -webkit-flex;
@@ -716,3 +718,72 @@ video {
     background: #ea1c0d; }
   .button--red.is-active {
     background: #F44336; }
+
+cardpreview {
+  width: 400px;
+  -webkit-flex: 0 0 400px;
+      -ms-flex: 0 0 400px;
+          flex: 0 0 400px; }
+
+.cards {
+  -webkit-flex: 1 1 400px;
+      -ms-flex: 1 1 400px;
+          flex: 1 1 400px; }
+
+.cards-nav {
+  overflow: hidden;
+  border-radius: 5px; }
+
+.cardList {
+  margin-top: 1rem;
+  width: 100%; }
+  .cardList th {
+    padding: 0.25rem 0.25rem;
+    text-align: left; }
+    .cardList th a {
+      color: #612229;
+      text-decoration: none; }
+      .cardList th a:hover, .cardList th a:focus {
+        text-decoration: underline; }
+  .cardList td {
+    padding: 0.25rem 0.25rem; }
+  .cardList tbody tr {
+    border-top: 1px solid rgba(49, 56, 67, 0.25); }
+  .cardList tbody tr:nth-child(even) {
+    background: rgba(0, 0, 0, 0.06); }
+
+.cardList-title.is-unique:after {
+  content: '';
+  position: relative;
+  top: 2px;
+  margin-left: 5px;
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  background: url(/img/unique.png);
+  background-size: 100%; }
+
+.buttonGroup {
+  display: inline-block;
+  border: 1px solid #313843;
+  border-radius: 5px;
+  font-size: 0; }
+
+.buttonGroup-button {
+  display: inline-block;
+  padding: 3px 7px;
+  border: 0;
+  background: none;
+  font-size: 12px;
+  border-right: 1px solid rgba(0, 0, 0, 0.12); }
+  .buttonGroup-button:hover, .buttonGroup-button:focus {
+    background: rgba(49, 56, 67, 0.25); }
+  .buttonGroup-button:last-child {
+    border-right: none; }
+  .buttonGroup-button.selected {
+    background: #313843;
+    color: #fff;
+    outline: 0; }
+
+.preload {
+  display: none; }

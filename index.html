@@ -24,8 +24,8 @@
 	<main class="main">
 		<deck></deck>
 		<cardpreview></cardpreview>
-		<div ng-controller="tabController as tab" class="rightdiv">
-			<section class="tab">
+		<div ng-controller="tabController as tab" class="cards">
+			<section class="cards-nav">
 				<ul class="navList navList--small navList--alt">
 					<li>
 						<a href ng-click="tab.setTab(1)" ng-class="{activetab: tab.isSet(1)}">Cards</a>
@@ -39,7 +39,7 @@
 					<li>
 						<a href ng-click="tab.setTab(4)" ng-class="{activetab: tab.isSet(4)}">Stats</a>
 					</li>
-<!-- 					<li>
+					<!-- <li>
 						<a href ng-click="tab.setTab(5)" ng-class="{activetab: tab.isSet(5)}">Help</a>
 					</li>
 					<li>
