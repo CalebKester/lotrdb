@@ -446,6 +446,12 @@ video {
 /* ==========================================================================
    Helper classes
    ========================================================================== */
+.align-center {
+  text-align: center; }
+
+.align-left {
+  text-align: left; }
+
 /*
  * Hide visually and from screen readers:
  */
@@ -687,6 +693,7 @@ video {
           flex: 0 0 auto; }
 
 .filter-button {
+  position: relative;
   -webkit-flex: 0 0 34px;
       -ms-flex: 0 0 34px;
           flex: 0 0 34px;
@@ -699,8 +706,27 @@ video {
   opacity: 0.24;
   outline: 0;
   transition: all 0.2s ease-out; }
+  .filter-button:hover, .filter-button:focus {
+    opacity: 0.5; }
   .filter-button.selected {
     opacity: 1; }
+  .filter-button img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    max-width: 18px;
+    max-height: 18px; }
+  .filter-button svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    width: 18px;
+    height: 18px;
+    fill: #fff; }
 
 .button {
   border: 0;
@@ -726,9 +752,9 @@ cardpreview {
           flex: 0 0 400px; }
 
 .cards {
-  -webkit-flex: 1 1 400px;
-      -ms-flex: 1 1 400px;
-          flex: 1 1 400px; }
+  -webkit-flex: 0 1 750px;
+      -ms-flex: 0 1 750px;
+          flex: 0 1 750px; }
 
 .cards-nav {
   overflow: hidden;
@@ -736,10 +762,10 @@ cardpreview {
 
 .cardList {
   margin-top: 1rem;
-  width: 100%; }
+  width: 100%;
+  text-align: center; }
   .cardList th {
-    padding: 0.25rem 0.25rem;
-    text-align: left; }
+    padding: 0.25rem 0.25rem; }
     .cardList th a {
       color: #612229;
       text-decoration: none; }
@@ -752,22 +778,53 @@ cardpreview {
   .cardList tbody tr:nth-child(even) {
     background: rgba(0, 0, 0, 0.06); }
 
-.cardList-title.is-unique:after {
-  content: '';
-  position: relative;
-  top: 2px;
-  margin-left: 5px;
-  display: inline-block;
-  width: 14px;
-  height: 14px;
-  background: url(../img/unique.png);
-  background-size: 100%; }
+.cardList-col-count {
+  width: 125px;
+  text-align: left; }
+
+.cardList-col-name {
+  text-align: left; }
+
+.cardList-col-sphere {
+  width: 65px;
+  text-align: center; }
+  .cardList-col-sphere img {
+    max-width: 20px;
+    max-height: 20px; }
+
+.cardList-col-cost {
+  width: 50px; }
+
+.cardList-col-type {
+  width: 50px; }
+  .cardList-col-type svg {
+    fill: #313843;
+    width: 22px;
+    height: 22px; }
+
+.cardList-col-attribute {
+  width: 35px; }
+
+.cardList-title {
+  position: relative; }
+  .cardList-title.is-unique:before {
+    content: '';
+    position: absolute;
+    right: 100%;
+    top: 3px;
+    margin-right: 5px;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background: url(../img/unique.png);
+    background-size: 100%; }
 
 .buttonGroup {
   display: inline-block;
   border: 1px solid #313843;
   border-radius: 5px;
-  font-size: 0; }
+  font-size: 0;
+  white-space: nowrap; }
 
 .buttonGroup-button {
   display: inline-block;

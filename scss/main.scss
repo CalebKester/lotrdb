@@ -151,6 +151,7 @@ $color-utility: #313843;
 }
 
 .filter-button {
+	position: relative;
 	flex: 0 0 34px;
 	background: url(../img/encounter.png) 50% 50%;
 	background-size: 100% 100%;
@@ -162,10 +163,43 @@ $color-utility: #313843;
 	outline: 0;
 	transition: all 0.2s ease-out;
 
+	&:hover, &:focus {
+		opacity: 0.5
+	}
+
 	&.selected {
 		opacity: 1;
 	}
+
+	img {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		max-width: 18px;
+		max-height: 18px;
+	}
+
+	svg {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 18px;
+		height: 18px;
+		fill: #fff;
+	}
 }
+
+// .filter-img {
+// 	max-width: 18px;
+// 	max-height: 18px;
+// }
+
+// .filter-img-svg {
+// 	width: 50%;
+// 	height: 50%;
+// }
 
 
 .button {
@@ -208,7 +242,7 @@ cardpreview {
 
 
 .cards {
-	flex: 1 1 400px;
+	flex: 0 1 750px;
 }
 
 .cards-nav {
@@ -219,10 +253,10 @@ cardpreview {
 .cardList {
 	margin-top: 1rem;
 	width: 100%;
+	text-align: center;
 
 	th {
 		padding: 0.25rem 0.25rem;
-		text-align: left;
 
 		a {
 			color: #612229;
@@ -251,14 +285,53 @@ cardpreview {
 	}
 }
 
+.cardList-col-count {
+	width: 125px;
+	text-align: left;
+}
+
+.cardList-col-name {
+	text-align: left;
+}
+
+.cardList-col-sphere {
+	width: 65px;
+	text-align: center;
+
+	img {
+		max-width: 20px;
+		max-height: 20px;
+	}
+}
+
+.cardList-col-cost {
+	width: 50px;
+}
+.cardList-col-type {
+	width: 50px;
+
+	svg {
+		fill: #313843;
+		width: 22px;
+		height: 22px;
+	}
+}
+
+.cardList-col-attribute {
+	width: 35px;
+}
+
+
 .cardList-title {
+	position: relative;
 
 	&.is-unique {
-		&:after{
+		&:before {
 			content: '';
-			position: relative;
-			top: 2px;
-			margin-left: 5px;
+			position: absolute;
+			right: 100%;
+			top: 3px;
+			margin-right: 5px;
 			display: inline-block;
 			width: 14px;
 			height: 14px;
@@ -275,6 +348,7 @@ cardpreview {
 	border: 1px solid $color-utility;
 	border-radius: 5px;
 	font-size: 0;
+	white-space: nowrap;
 }
 
 .buttonGroup-button {
