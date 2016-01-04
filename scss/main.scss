@@ -93,6 +93,22 @@ $color-utility: #313843;
 	padding: 1rem;
 }
 
+.side {
+	flex: 1 1 300px;
+	display: flex; 
+	flex-wrap: wrap-reverse;
+}
+
+deck {
+	flex: 1 0 200px;	
+}
+
+
+cardpreview {
+	flex: 4 0 200px;
+}
+
+
 
 // Filters
 
@@ -231,13 +247,6 @@ $color-utility: #313843;
 }
 
 
-
-
-
-cardpreview {
-	width: 400px;
-	flex: 0 0 400px;
-}
 
 
 

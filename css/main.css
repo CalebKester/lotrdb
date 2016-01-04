@@ -237,8 +237,7 @@ select {
  *    `input` and others.
  */
 button,
-html input[type="button"],
-input[type="reset"],
+html input[type="button"], input[type="reset"],
 input[type="submit"] {
   -webkit-appearance: button;
   /* 2 */
@@ -643,6 +642,27 @@ video {
   display: flex;
   padding: 1rem; }
 
+.side {
+  -webkit-flex: 1 1 300px;
+      -ms-flex: 1 1 300px;
+          flex: 1 1 300px;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap-reverse;
+      -ms-flex-wrap: wrap-reverse;
+          flex-wrap: wrap-reverse; }
+
+deck {
+  -webkit-flex: 1 0 200px;
+      -ms-flex: 1 0 200px;
+          flex: 1 0 200px; }
+
+cardpreview {
+  -webkit-flex: 4 0 200px;
+      -ms-flex: 4 0 200px;
+          flex: 4 0 200px; }
+
 .filters {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -744,12 +764,6 @@ video {
     background: #ea1c0d; }
   .button--red.is-active {
     background: #F44336; }
-
-cardpreview {
-  width: 400px;
-  -webkit-flex: 0 0 400px;
-      -ms-flex: 0 0 400px;
-          flex: 0 0 400px; }
 
 .cards {
   -webkit-flex: 0 1 750px;
