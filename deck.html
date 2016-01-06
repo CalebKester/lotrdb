@@ -7,103 +7,107 @@
 <!-- TODO add icon for cards instead of text-->
 <h4 ng-show="deck.countTotal()">Total Cards: {{deck.countTotal()}}</h4>
 
-<table class="cardList">
+<div class="cardlist">
 	<!--Heroes-->
-	<tbody ng-show="deck.countHeroes()">
-		<tr>
+	<div ng-show="deck.countHeroes()">
+		<div class="cardlist-row">
 			<!--Add icon for threat-->
-			<th class="cardList-col-count" colspan="2">Heroes (Starting threat: {{deck.startingThreat()}})</th>
-		</tr>
-		<tr ng-repeat="card in deck['1hero'] | orderBy:['sphere','name_norm']" ng-mouseover="deckC.changepreview(card)">
-			<td class="cardList-col-count">
+			<div class="cardList-label" colspan="2">Heroes (Starting threat: {{deck.startingThreat()}})</div>
+		</div>
+		<div class="cardlist-row" ng-repeat="card in deck['1hero'] | orderBy:['sphere','name_norm']" ng-mouseover="deckC.changepreview(card)">
+			<div class="cardlist-count">
 				<div class="buttonGroup">
 					<button class="buttonGroup-button" ng-class="{selected: deck.quantity(card)==0}" ng-click="deck.change(card,0)">0</button>
 					<button class="buttonGroup-button" ng-class="{selected: deck.quantity(card)==1}" ng-click="deck.change(card,1)">1</button>
 				</div>
-			</td>
-			<td class="cardList-col-name color--{{card.sphere}}">
+			</div>
+			<div class="cardlist-name color--{{card.sphere}}">
 				<div class="cardList-title" ng-class="(card.unique) ? 'is-unique' : ''">{{card.name}}</div>
-			</td>
-		</tr>
-	</tbody>
+			</div>
+		</div>
+	</div>
 	
 	<!--Allies-->
-	<tbody ng-show="deck.countAllies()">	
-		<tr>
-			<th class="cardList-col-count" colspan="2">Allies ({{deck.countAllies()}})</th>
-		</tr>
-		<tr ng-repeat="card in deck['2ally'] | orderBy:['sphere','name_norm']" ng-mouseover="deckC.changepreview(card)">
-			<td class="cardList-col-count">
+	<div ng-show="deck.countAllies()">
+		<div class="cardlist-row">
+			<!--Add icon for threat-->
+			<div class="cardList-label" colspan="2">Allies ({{deck.countAllies()}})</div>
+		</div>
+		<div class="cardlist-row" ng-repeat="card in deck['2ally'] | orderBy:['sphere','name_norm']" ng-mouseover="deckC.changepreview(card)">
+			<div class="cardlist-count">
 				<div class="buttonGroup">
 					<button class="buttonGroup-button" ng-class="{selected: deck.quantity(card)==0}" ng-click="deck.change(card,0)">0</button>
 					<button class="buttonGroup-button" ng-class="{selected: deck.quantity(card)==1}" ng-click="deck.change(card,1)">1</button>
 					<button class="buttonGroup-button" ng-class="{selected: deck.quantity(card)==2}" ng-click="deck.change(card,2)" ng-if="card.type!='1hero' && !card.restrict">2</button>
 					<button class="buttonGroup-button" ng-class="{selected: deck.quantity(card)==3}" ng-click="deck.change(card,3)" ng-if="card.type!='1hero' && !card.restrict">3</button>
 				</div>
-			</td>
-			<td class="cardList-col-name color--{{card.sphere}}">
+			</div>
+			<div class="cardlist-name color--{{card.sphere}}" ng-class="(card.unique) ? 'is-unique' : ''">
 				<div class="cardList-title" ng-class="(card.unique) ? 'is-unique' : ''">{{card.name}}</div>
-			</td>
-		</tr>
-	</tbody>
+			</div>
+		</div>
+	</div>
 	
 	<!--Attachments-->
-	<tbody ng-show="deck.countAttachments()">	
-		<tr>
-			<th class="cardList-col-count" colspan="2">Attachments ({{deck.countAttachments()}})</th>
-		</tr>
-		<tr ng-repeat="card in deck['3attachment'] | orderBy:['sphere','name_norm']" ng-mouseover="deckC.changepreview(card)">
-			<td class="cardList-col-count">
+	<div ng-show="deck.countAttachments()">
+		<div class="cardlist-row">
+			<!--Add icon for threat-->
+			<div class="cardList-label" colspan="2">Attachments ({{deck.countAttachments()}})</div>
+		</div>
+		<div class="cardlist-row" ng-repeat="card in deck['3attachment'] | orderBy:['sphere','name_norm']" ng-mouseover="deckC.changepreview(card)">
+			<div class="cardlist-count">
 				<div class="buttonGroup">
 					<button class="buttonGroup-button" ng-class="{selected: deck.quantity(card)==0}" ng-click="deck.change(card,0)">0</button>
 					<button class="buttonGroup-button" ng-class="{selected: deck.quantity(card)==1}" ng-click="deck.change(card,1)">1</button>
 					<button class="buttonGroup-button" ng-class="{selected: deck.quantity(card)==2}" ng-click="deck.change(card,2)" ng-if="card.type!='1hero' && !card.restrict">2</button>
 					<button class="buttonGroup-button" ng-class="{selected: deck.quantity(card)==3}" ng-click="deck.change(card,3)" ng-if="card.type!='1hero' && !card.restrict">3</button>
 				</div>
-			</td>
-			<td class="cardList-col-name color--{{card.sphere}}">
+			</div>
+			<div class="cardlist-name color--{{card.sphere}}" ng-class="(card.unique) ? 'is-unique' : ''">
 				<div class="cardList-title" ng-class="(card.unique) ? 'is-unique' : ''">{{card.name}}</div>
-			</td>
-		</tr>
-	</tbody>
+			</div>
+		</div>
+	</div>
 	
 	<!--Events-->
-	<tbody ng-show="deck.countEvents()">	
-		<tr>
-			<th class="cardList-col-count" colspan="2">Events ({{deck.countEvents()}})</th>
-		</tr>
-		<tr ng-repeat="card in deck['4event'] | orderBy:['sphere','name_norm']" ng-mouseover="deckC.changepreview(card)">
-			<td class="cardList-col-count">
+	<div ng-show="deck.countEvents()">
+		<div class="cardlist-row">
+			<!--Add icon for threat-->
+			<div class="cardList-label" colspan="2">Events ({{deck.countEvents()}})</div>
+		</div>
+		<div class="cardlist-row" ng-repeat="card in deck['4event'] | orderBy:['sphere','name_norm']" ng-mouseover="deckC.changepreview(card)">
+			<div class="cardlist-count">
 				<div class="buttonGroup">
 					<button class="buttonGroup-button" ng-class="{selected: deck.quantity(card)==0}" ng-click="deck.change(card,0)">0</button>
 					<button class="buttonGroup-button" ng-class="{selected: deck.quantity(card)==1}" ng-click="deck.change(card,1)">1</button>
 					<button class="buttonGroup-button" ng-class="{selected: deck.quantity(card)==2}" ng-click="deck.change(card,2)" ng-if="card.type!='1hero' && !card.restrict">2</button>
 					<button class="buttonGroup-button" ng-class="{selected: deck.quantity(card)==3}" ng-click="deck.change(card,3)" ng-if="card.type!='1hero' && !card.restrict">3</button>
 				</div>
-			</td>
-			<td class="cardList-col-name color--{{card.sphere}}">
+			</div>
+			<div class="cardlist-name color--{{card.sphere}}" ng-class="(card.unique) ? 'is-unique' : ''">
 				<div class="cardList-title" ng-class="(card.unique) ? 'is-unique' : ''">{{card.name}}</div>
-			</td>
-		</tr>
-	</tbody>
+			</div>
+		</div>
+	</div>
 	
 	<!--Quests-->
-	<tbody ng-show="deck.countQuests()">	
-		<tr>
-			<th class="cardList-col-count" colspan="2">Quests ({{deck.countQuests()}})</th>
-		</tr>
-		<tr ng-repeat="card in deck['5quest'] | orderBy:['sphere','name_norm']" ng-mouseover="deckC.changepreview(card)">
-			<td class="cardList-col-count">
+	<div ng-show="deck.countQuests()">
+		<div class="cardlist-row">
+			<!--Add icon for threat-->
+			<div class="cardList-label" colspan="2">Quests ({{deck.countQuests()}})</div>
+		</div>
+		<div class="cardlist-row" ng-repeat="card in deck['5quest'] | orderBy:['sphere','name_norm']" ng-mouseover="deckC.changepreview(card)">
+			<div class="cardlist-count">
 				<div class="buttonGroup">
 					<button class="buttonGroup-button" ng-class="{selected: deck.quantity(card)==0}" ng-click="deck.change(card,0)">0</button>
 					<button class="buttonGroup-button" ng-class="{selected: deck.quantity(card)==1}" ng-click="deck.change(card,1)">1</button>
 					<button class="buttonGroup-button" ng-class="{selected: deck.quantity(card)==2}" ng-click="deck.change(card,2)" ng-if="card.type!='1hero' && !card.restrict">2</button>
 					<button class="buttonGroup-button" ng-class="{selected: deck.quantity(card)==3}" ng-click="deck.change(card,3)" ng-if="card.type!='1hero' && !card.restrict">3</button>
 				</div>
-			</td>
-			<td class="cardList-col-name color--{{card.sphere}}">
+			</div>
+			<div class="cardlist-name color--{{card.sphere}}" ng-class="(card.unique) ? 'is-unique' : ''">
 				<div class="cardList-title" ng-class="(card.unique) ? 'is-unique' : ''">{{card.name}}</div>
-			</td>
-		</tr>
-	</tbody>
-</table>
+			</div>
+		</div>
+	</div>
+</div>
