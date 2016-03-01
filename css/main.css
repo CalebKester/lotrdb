@@ -575,7 +575,22 @@ video {
   src: url("../fonts/vafthrud-webfont.eot");
   src: url("../fonts/vafthrud-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/vafthrud-webfont.woff") format("woff"), url("../fonts/vafthrud-webfont.ttf") format("truetype"), url("../fonts/vafthrud-webfont.svg#webfont") format("svg"); }
 
+html {
+  height: 100%; }
+
+body {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%; }
+
 .header {
+  -webkit-flex: 0 0 auto;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -639,8 +654,7 @@ video {
 .main {
   display: -webkit-flex;
   display: -ms-flexbox;
-  display: flex;
-  padding: 1rem; }
+  display: flex; }
 
 .side {
   -webkit-flex: 1 1 300px;
@@ -656,12 +670,19 @@ video {
 deck {
   -webkit-flex: 1 0 200px;
       -ms-flex: 1 0 200px;
-          flex: 1 0 200px; }
+          flex: 1 0 200px;
+  overflow: auto;
+  padding: 1rem;
+  background: #e6e6e6; }
 
 cardpreview {
   -webkit-flex: 4 0 200px;
       -ms-flex: 4 0 200px;
-          flex: 4 0 200px; }
+          flex: 4 0 200px;
+  max-width: 350px;
+  overflow: auto;
+  padding: 1rem;
+  background: #f2f2f2; }
 
 .filters {
   display: -webkit-flex;
@@ -768,7 +789,9 @@ cardpreview {
 .cards {
   -webkit-flex: 0 1 750px;
       -ms-flex: 0 1 750px;
-          flex: 0 1 750px; }
+          flex: 0 1 750px;
+  overflow: auto;
+  padding: 1rem; }
 
 .cards-nav {
   overflow: hidden;
